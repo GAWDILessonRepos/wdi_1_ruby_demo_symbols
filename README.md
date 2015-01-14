@@ -68,13 +68,27 @@ If you create two strings with the same value they will each take up space in me
  
 ```
 
+### Symbols are quick to compare
+
+Each symbol in a program is unique, it has a unique object_id. So, it's easy and quick to compare. 
+
+*Unlike strings where the compare must check each character in the string*
+
+
 ### Symbols make great Hash keys.
 
 We'll see more of how Ruby Hashes work. 
 
 But, suffice to say that keys in Hashes should be immutable so that the Hashing function used to implement this data structure works well.
 
+### Symbols are used for keyword arguments in function/methods.
 
+```
+# controller, action and id are symbols
+url_for :controller => 'bug',
+        :action => 'show',
+        :id => bug.id
+```
 ### Symbols work well with multiple threads
 
 Since Ruby symbols are immutable they work well with threads. *We won't be using threads in this course, almost all Ruby programs are single threaded*
@@ -85,3 +99,5 @@ List additional related resources such as videos, blog posts and official docume
 
 - [Ruby Symbols Explained](https://www.youtube.com/watch?v=mBXGBbEbXZY)
 - [Official Ruby Symbol documentation](http://ruby-doc.org/core-2.2.0/Symbol.html)
+- [13 Ways to look at a Ruby Symbol](http://www.randomhacks.net/2007/01/20/13-ways-of-looking-at-a-ruby-symbol/)
+- [Ruby Quick Reference](http://www.zenspider.com/Languages/Ruby/QuickRef.html#symbols)
